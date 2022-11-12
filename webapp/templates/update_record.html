@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="my-3">Редактировать запись</h1>
+    <form action="" class="form-control" method="post">
+        {% include 'partial/form.html' with button_text='Изменить' %}
+    </form>
+    <a href="{% url 'index' %}" class="btn btn-primary">На главную</a>
+{% endblock %}

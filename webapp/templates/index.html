@@ -18,7 +18,14 @@
     <div class="row">
         {% for item in records %}
             <div class="card border-secondary mb-3 px-0">
-
+                <div class="card-header text-center"><span class="mb-2 d-inline-block">{{ item.title }} | ({{ item.email_author }})</span>
+                    <a href="{% url 'update_record' item.pk  %}" class="d-inline-block">
+                        <i class="fa-solid fa-floppy-disk fs-3 pt-2 ps-2"></i>
+                    </a>
+                    <a href="{% url 'delete_record' item.pk  %}" class="d-inline-block">
+                        <i class="fa-regular fa-floppy-disk fs-3 pt-2 ps-2"></i>
+                    </a>
+                </div>
                 <div class="card-body text-secondary">
                     <p class="card-text">{{ item.content }}</p>
                 </div>
