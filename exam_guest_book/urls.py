@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.urls import path
 
-from webapp.views import index_view, search_record
+from webapp.views import index_view, search_record, create_record
 
 urlpatterns = [
     path('', index_view, name='index'),
+    path('create_record/', create_record, name='create_record'),
     path('search_record/', search_record, name='search_record'),
 
 ]
