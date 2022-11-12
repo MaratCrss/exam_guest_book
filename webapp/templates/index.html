@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block nav %}
+
+{% endblock %}
+{% block content %}
+    {% csrf_token %}
+    <form class="row g-3" action="{% url 'search_record' %}" method="GET">
+        <div class="col-auto">
+            <input type="text" name="name" class="form-control" placeholder="Search">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Поиск</button>
+        </div>
+    </form>
+    <h1 class="text-center my-4">Гостевая книга</h1>
+    <div class="row">
+        {% for item in records %}
+            <div class="card border-secondary mb-3 px-0">
+
+                <div class="card-body text-secondary">
+                    <p class="card-text">{{ item.content }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
